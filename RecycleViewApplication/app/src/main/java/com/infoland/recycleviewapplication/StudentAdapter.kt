@@ -1,0 +1,42 @@
+package com.infoland.recycleviewapplication
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+
+// HOW TO PLACE CARD VIEW ON RECYCLER VIEW -> USING ADAPTER
+class StudentAdapter(var studentList: ArrayList<StudentModel>, var context: Context)
+    : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>()
+{
+    class StudentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    {
+        val studentName = itemView.findViewById<TextView>(R.id.txt_name)
+        val studentBannerId = itemView.findViewById<TextView>(R.id.txt_bannerId)
+        val btnDetails = itemView.findViewById<Button>(R.id.btn_details)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
+        val holder = LayoutInflater.from(parent.context).inflate(R.layout.student_item_view, parent, false)
+        return StudentViewHolder(holder)
+    }
+
+    override fun getItemCount(): Int {
+        return  studentList.size
+    }
+
+    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
+        val currentStudent = studentList[position]
+
+        holder.studentName.text = currentStudent.name
+        holder.studentBannerId.text = currentStudent.bannerID
+
+        holder.btnDetails.setOnClickListener {
+            Toast.makeText(context, "${currentStudent.name}'s Details...", Toast.LENGTH_LONG).show()
+        }
+    }
+}

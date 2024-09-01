@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FirstAndroidProgram</string>
+    <string name="name_test">HelloAndroidProgram</string>
+    <string name="title">I and Title.</string>
+    <string name="sample">I am txt Sample</string>
+</resources>

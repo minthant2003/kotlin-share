@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelectionActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Information"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="35sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/student_email"
+        android:hint="Enter Email"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Choose Section :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"/>
+        <RadioGroup
+            android:id="@+id/rdo_group_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rdo_btn_bc18"
+                android:text="BC18"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"/>
+            <RadioButton
+                android:id="@+id/rdo_btn_bc19"
+                android:text="BC19"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:gravity="center">
+        <CheckBox
+            android:id="@+id/check_music"
+            android:text="Music Club"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"/>
+        <CheckBox
+            android:id="@+id/check_fusal"
+            android:text="Fusal Club"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"/>
+        <CheckBox
+            android:id="@+id/check_sport"
+            android:text="Sport Club"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp">
+        <TextView
+            android:text="Choose Campus : "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spinner_campus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_select_DoB"
+            android:text="Choose DoB :"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20sp"/>
+        <TextView
+            android:id="@+id/txt_select_DoB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_select_time"
+            android:text="Choose Time :"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20sp"/>
+        <TextView
+            android:id="@+id/txt_select_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_select_submit"
+            android:text="Submit"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20sp"/>
+        <Button
+            android:id="@+id/btn_select_clear"
+            android:text="Clear"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
