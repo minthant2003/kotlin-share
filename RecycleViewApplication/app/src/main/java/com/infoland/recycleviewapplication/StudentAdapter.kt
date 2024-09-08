@@ -18,6 +18,8 @@ class StudentAdapter(var studentList: ArrayList<StudentModel>, var context: Cont
         val studentName = itemView.findViewById<TextView>(R.id.txt_name)
         val studentBannerId = itemView.findViewById<TextView>(R.id.txt_bannerId)
         val btnDetails = itemView.findViewById<Button>(R.id.btn_details)
+        val btnEdit = itemView.findViewById<Button>(R.id.btn_edit)
+        val btnDelete = itemView.findViewById<Button>(R.id.btn_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
@@ -36,7 +38,15 @@ class StudentAdapter(var studentList: ArrayList<StudentModel>, var context: Cont
         holder.studentBannerId.text = currentStudent.bannerID
 
         holder.btnDetails.setOnClickListener {
-            Toast.makeText(context, "${currentStudent.name}'s Details...", Toast.LENGTH_LONG).show()
+            (context as? MainActivity)?.showStudentDetails(currentStudent)
+        }
+
+        holder.btnEdit.setOnClickListener {
+            (context as? MainActivity)?.editStudent(currentStudent)
+        }
+
+        holder.btnDelete.setOnClickListener {
+            (context as? MainActivity)?.deleteStudent(currentStudent.id) // if (context is Main) CODE BODY
         }
     }
 }
