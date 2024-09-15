@@ -4,9 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 // HOW TO PLACE CARD VIEW ON RECYCLER VIEW -> USING ADAPTER
@@ -17,9 +16,9 @@ class StudentAdapter(var studentList: ArrayList<StudentModel>, var context: Cont
     {
         val studentName = itemView.findViewById<TextView>(R.id.txt_name)
         val studentBannerId = itemView.findViewById<TextView>(R.id.txt_bannerId)
-        val btnDetails = itemView.findViewById<Button>(R.id.btn_details)
-        val btnEdit = itemView.findViewById<Button>(R.id.btn_edit)
-        val btnDelete = itemView.findViewById<Button>(R.id.btn_delete)
+        val btnDetails = itemView.findViewById<ImageButton>(R.id.btn_details)
+        val btnEdit = itemView.findViewById<ImageButton>(R.id.btn_edit)
+        val btnDelete = itemView.findViewById<ImageButton>(R.id.btn_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {

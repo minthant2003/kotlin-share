@@ -18,9 +18,10 @@
             android:hint="Search something ..."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Button
+        <ImageButton
             android:id="@+id/btn_search_key"
-            android:text="Search"
+            android:src="@drawable/search_icon"
+            android:backgroundTint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

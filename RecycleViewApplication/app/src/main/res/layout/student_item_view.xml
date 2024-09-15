@@ -28,21 +28,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right">
-            <Button
+            <ImageButton
                 android:id="@+id/btn_edit"
-                android:text="Edit"
+                android:src="@drawable/edit_icon"
                 android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button
+            <ImageButton
                 android:id="@+id/btn_delete"
-                android:text="Delete"
+                android:src="@drawable/delete_icon"
                 android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Button
+            <ImageButton
                 android:id="@+id/btn_details"
-                android:text="See More"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/details_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

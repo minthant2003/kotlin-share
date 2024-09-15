@@ -2,11 +2,12 @@ package com.infoland.recycleviewapplication
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var editSearchKey: EditText
-    lateinit var btnSearchKey: Button
+    lateinit var btnSearchKey: ImageButton
     lateinit var recyclerView: RecyclerView
     lateinit var btnAdd: FloatingActionButton
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         editSearchKey = findViewById<EditText>(R.id.edit_search_key)
-        btnSearchKey = findViewById<Button>(R.id.btn_search_key)
+        btnSearchKey = findViewById<ImageButton>(R.id.btn_search_key)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         btnAdd = findViewById<FloatingActionButton>(R.id.btn_add)
 
@@ -72,21 +73,29 @@ class MainActivity : AppCompatActivity() {
 
     // SHOW STUDENT DETAILS INFORMATION
     fun showStudentDetails(student: StudentModel) {
-        val stBuilder = StringBuilder()
-        stBuilder.append("Banner ID : ${student.bannerID}\n")
-        stBuilder.append("Name : ${student.name}\n")
-        stBuilder.append("Email : ${student.email}\n")
-        stBuilder.append("Section : ${student.section}\n")
-        stBuilder.append("AY : ${student.AY}")
+        // TO SEND BUNDLE IN STRING FORMAT
+//        val stBuilder = StringBuilder()
+//        stBuilder.append("Banner ID : ${student.bannerID}\n")
+//        stBuilder.append("Name : ${student.name}\n")
+//        stBuilder.append("Email : ${student.email}\n")
+//        stBuilder.append("Section : ${student.section}\n")
+//        stBuilder.append("AY : ${student.AY}")
+//        val intent = Intent(this@MainActivity, StudentDetailsActivity::class.java)
+//        intent.putExtra("details", stBuilder.toString())
 
-        val alertDialog = AlertDialog.Builder(this)
-        alertDialog.setTitle("Student Information")
-        alertDialog.setMessage(stBuilder.toString())
-        alertDialog.setCancelable(false)
-        alertDialog.setPositiveButton("OK") { dialogInterface, _ ->
-            dialogInterface.dismiss()
-        }
-        alertDialog.show()
+        val intent = Intent(this@MainActivity, StudentDetailsActivity::class.java)
+        intent.putExtra("StudentModel", student)
+        startActivity(intent)
+
+        // THIS IS TO SHOW STUDENT DETAILS WITH DAILOG
+//        val alertDialog = AlertDialog.Builder(this)
+//        alertDialog.setTitle("Student Information")
+//        alertDialog.setMessage(stBuilder.toString())
+//        alertDialog.setCancelable(false)
+//        alertDialog.setPositiveButton("OK") { dialogInterface, _ ->
+//            dialogInterface.dismiss()
+//        }
+//        alertDialog.show()
     }
 
     private fun searchStudent(key: String) {
